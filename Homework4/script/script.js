@@ -43,19 +43,10 @@
 
 
 
-function pow(x, n){
-    let result = x;
-
-    for (let i = 1; i < n; i++) {
-        result *= x;
-    }
-
-    return result;
+function pow(x, n=1){
+    return x ** n;
 }
 
-let x = 2;
-let n = 5;
+console.log(pow(5,2));
 
-alert(pow(x, n));
-
-pow (x, n);
+console.log(pow(5));

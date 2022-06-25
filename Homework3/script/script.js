@@ -49,12 +49,10 @@ const adultPermission = confirm('Есть разрешение взрослых?
 
 if (((visitorAnswer >= 12 && visitorAnswer < 18) && adultPermission) || visitorAnswer >= 60 && adultPermission) {
     alert('Можете пройти на аттракцион');
-} else if(visitorAnswer < 12) {
-    alert('Доступ запрещен!');
-} else if (visitorAnswer > 60){
+} else if(visitorAnswer < 12 || visitorAnswer > 60) {
     alert('Доступ запрещен!');
 } else { 
-    alert('Можете пройти на аттракцион')
+    alert('Без разрешения взрослых вход запрещен!')
 }
 
 

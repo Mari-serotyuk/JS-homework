@@ -10,30 +10,49 @@ let amountTrue = arr.filter(function(value) {
 
 //Задание 2
 
+const animalsCount = (items) => {
 
-let animals = ['zebra', 'elephant', 'lion', 'elephant', 'lion', 'zebra', 'lion', 'zebra', 'zebra'];
-// let count = {zebra: 0, elephant: 0, lion: 0};
+    const count = {};
 
-// for (let elem of animals){
-//     count[elem]++;
-// }
-
-let count = {};
-
-for(let elem of animals){
-    if(count[elem] === undefined){
-        count[elem] = 1;
-    }else{
-        count[elem]++;
+    for(let elem of items){
+        
+        if(!count[elem]){
+            count[elem] = 1;
+        }else{
+            count[elem] += 1;
+        }
     }
-}
 
-// console.log(count);
+    return count
+};
+
+// const result = animalsCount(['zebra', 'elephant', 'lion', 'elephant', 'lion', 'zebra', 'lion', 'zebra', 'zebra']);
+// console.log('Количество:', result)
+
 
 //Задание 3
 
-let numbers = [2, 4, 6, 7, 8, 10, 12, 14];
+const findExtra = (integers) => {
 
-let result = numbers.filter(num => num % 2);
+    let evenNumbers = []
+    let oddNumbers = []
 
-console.log(result);
+    for (let num of integers){
+
+        num % 2 == 0 ? evenNumbers.push(num) : oddNumbers.push(num)
+    }
+
+    if(evenNumbers.length > oddNumbers.length){
+        return oddNumbers[0]
+    }else{
+        return evenNumbers[0]
+    }
+}
+
+const integer = findExtra([2, 4, 6, 7, 8, 10, 12, 14]);
+const integer2 = findExtra([3, 5, 7, 9, 10, 11, 13, 15]);
+
+console.log ('Лишнее число:', integer)
+console.log ('Лишнее число:', integer2)
+
+

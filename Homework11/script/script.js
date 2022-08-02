@@ -62,19 +62,16 @@ const products = [
 
   const createProductCards = (arr) => {
 
-    const productContainer = document.createElement('div');
+    const productsContainer = document.createElement('div');
 
-      const productNameHTML = arr
-        .map((products) => `<h2>${products.name}</h2>`)
-        .join('');
+     arr.forEach((products) => {
 
-        console.log(productNameHTML)
+      const productContainer = document.createElement('div');
 
-      const productBrandHTML = arr
-        .map((products) => `<h3>${products.brand}</h3>`)
-        .join('');
-
-        console.log(productBrandHTML)
+      let html = '';
+      html+=`<h2>${products.name}</h2>`;
+      html+=`<h3>${products.brand}</h3>`;
+      productContainer.innerHTML = html;
 
       const list = document.createElement('ul');
       
@@ -85,15 +82,11 @@ const products = [
         console.log(listHTML)
         list.innerHTML = listHTML
 
-      console.dir(list);
-      document.body.append(list)
+        productContainer.append(list);
+        productsContainer.append(productContainer);
+     })
 
-      // productContainer.append(productNameHTML, productBrandHTML, list)
-    
-    
-
-    console.dir(productContainer);
-    document.body.append(productContainer)
+     document.body.append(productsContainer);
   }
 
   createProductCards(products);

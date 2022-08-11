@@ -1,3 +1,5 @@
+//Первый способ
+
 // const slides = document.querySelectorAll('#slides .slide');
 // const currentSlide = 0;
 
@@ -28,6 +30,8 @@
 //     previousSlide();
 // };
 
+
+// Второй способ
 
 const slides = document.querySelectorAll('.slide');
 const next = document.getElementById('next');
